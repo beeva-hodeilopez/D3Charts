@@ -17,7 +17,9 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 // Component styles are injected through grunt
 // injector
+@import 'd3angular/progress/progress.scss';
 @import 'main/main.scss';
+@import 'directives/d3-progress/d3-progress.scss';
 @import 'directives/my-header/my-header.scss';
 // endinjector
 
@@ -105,4 +107,7 @@ h1 {
     text-align: center;
     text-shadow: 0 1px 1px #fff; }
 
+.core__toolbar-active{
+    background-color: rgba(255, 255, 255, 0.39);
+}
 

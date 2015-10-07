@@ -6,7 +6,9 @@ angular.module('d3ChartsApp', [
   'ngSanitize',
   'ngMaterial',
   'ui.router',
-  'ui.bootstrap'
+  'duScroll',
+  'ui.bootstrap',
+  'hljs'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
@@ -15,4 +17,7 @@ angular.module('d3ChartsApp', [
     $locationProvider.html5Mode(true);
 
 
+  })
+  .run(function (Config) {
+    Config.startApp();
   });

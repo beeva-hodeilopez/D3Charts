@@ -2,10 +2,10 @@ section.content-header(style="text-align:center;min-height: 420px;")
     div(style="margin-top: 164px; background-color: rgba(230, 217, 247, 0.59);")
         h1
             | Visualización de datos con D3
-        md-button.md-raised(style="background-color: transparent; border: 1px solid black;") Ver ejemplos
+        md-button.md-raised(href="#section-examples" du-smooth-scroll du-scrollspy style="background-color: transparent; border: 1px solid black;") Ver ejemplos
         br
         br
-section.content(style="min-height: 400px;")
+section#section-examples.content(style="min-height: 400px;")
     .col-lg-4.md-whiteframe-4dp
         div.sunburst-layout(style="text-align: center;")
             div(style="background-color: rgb(0, 0, 0);")
@@ -17,7 +17,9 @@ section.content(style="min-height: 400px;")
                 h2(style="padding-top: 10px;color: white;") Chord layout example (timeline)
                 md-button.md-raised(style="background-color: transparent; border: 1px solid white;color:white") Demo
     .col-lg-4.md-whiteframe-4dp
-        div.progress-layout(style="text-align: center;")
+        div.progress-layout(style="text-align: center;" )
             div(style="background-color: rgb(0, 0, 0);")
                 h2(style="padding-top: 10px;color: white;") Progress example (responsive)
-                md-button.md-raised(style="background-color: transparent; border: 1px solid white;color:white") Demo
+                md-button.md-raised(ng-click="goToLink('progress')" style="background-color: transparent; border: 1px solid white;color:white") Demo
+
+

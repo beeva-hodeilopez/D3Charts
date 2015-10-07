@@ -1,11 +1,19 @@
 md-toolbar
     .md-toolbar-tools
-        md-button.md-icon-button(aria-label='Settings')
-            md-icon(md-svg-icon='img/icons/menu.svg')
+        md-button.md-icon-button(aria-label='Settings' ng-click="goToLink('/')" style="margin-top: 9px;")
+            i.fa.fa-home.fa-2x
         h2
             span D3Charts
         span(flex='')
-        md-button.md-icon-button(aria-label='Favorite')
-            md-icon(md-svg-icon='img/icons/favorite.svg', style='color: greenyellow;')
-        md-button.md-icon-button(aria-label='More')
-            md-icon(md-svg-icon='img/icons/more_vert.svg')
+.lock-size(layout="column" layout-align="start end" style="position:fixed;")
+    md-fab-speed-dial(md-open='demo.isOpen', md-direction='down', ng-class="'md-fling'")
+        md-fab-trigger
+            md-button.md-fab.md-warn(aria-label='menu')
+                i.fa.fa-bars
+        md-fab-actions
+            md-button.md-fab.md-raised.md-mini(aria-label='Github')
+                i.fa.fa-github
+            md-button.md-fab.md-raised.md-mini(aria-label='Twitter')
+                i.fa.fa-twitter
+            md-button.md-fab.md-raised.md-mini(aria-label='Google Hangout')
+               i.fa.fa-google-plus
