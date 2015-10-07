@@ -1,0 +1,40 @@
+.col-lg-10.col-lg-offset-1(style="margin-top:15px")
+    md-toolbar(style="background-color: rgba(255, 0, 0, 0.68); box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.26);")
+        .md-toolbar-tools
+            h2
+                span Progress chart
+            span(flex='')
+            md-button.md-icon-button(ng-class="{'core__toolbar-active':view}" aria-label='View' ng-click="setView(true)")
+               i.fa.fa-eye
+               md-tooltip
+                | View
+            md-button.md-icon-button(ng-class="{'core__toolbar-active':!view}" aria-label='Source' ng-click="setView(false)")
+               i.fa.fa-code
+               md-tooltip
+                   | Code
+    md-content(style="background-color: rgba(255, 255, 255, 0.8); box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);")
+        div(ng-show="view")
+            .d3-progress-container(style="text-align: center; margin-top: 40px; margin-bottom: 40px;")
+                d3-progress(value='{{item.percent}}',color='{{item.color}}')
+        div(ng-show="!view")
+            md-tabs(md-dynamic-height='', md-border-bottom='')
+                md-tab(label='HTML')
+                    md-content.md-padding
+                        div(hljs="" include="'components/partials/progress/progress.html'")
+                md-tab(label='Directiva')
+                    md-content.md-padding
+                        div(hljs="" include="'components/partials/progress/progress.js.html'")
+                md-tab(label='Controlador')
+                    md-content.md-padding
+                        div(hljs="" include="'components/partials/progress/progress-controller.js.html'")
+                md-tab(label='Importante')
+                    md-content.md-padding
+                        p A tener en cuenta a la hora de implementar:
+                        ul
+                            li Se utiliza una directiva que detecta el resize para que el gráfico sea responsive.
+                            li Esta directiva se comnunica con un servicio Config que lanza el evento de resize.
+                        p Parámetros de la directiva (obligatorios)
+                        ul
+                            li color: Admite el color de fondo para el gráfico (hexadecimal)
+                            li percent: Porcentaje que se quiera mostrar
+
