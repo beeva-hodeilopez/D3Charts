@@ -4,7 +4,6 @@ public
 .sass-cache
 .idea
 client/bower_components
-dist
 server/config/environment/aws_credentials.json
 auditoriaBeeva
 logs

@@ -57,7 +57,7 @@ module.exports = function (grunt) {
               url: 'auditoriaBeeva/coverage/lcov-report/index.html'
             }
         },
-    
+
         watch: {
             injectJS: {
                 files: [
@@ -84,7 +84,7 @@ module.exports = function (grunt) {
                 ],
                 tasks: ['newer:jshint:all', 'karma']
             },
-    
+
         injectSass: {
         files: [
         '<%= yeoman.client %>/{app,components}/**/*.{scss,sass}'],
@@ -245,7 +245,7 @@ module.exports = function (grunt) {
         src: [
         '<%= yeoman.dist %>/public/{,*/}*.js',
         '<%= yeoman.dist %>/public/{,*/}*.css',
-        '<%= yeoman.dist %>/public/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+        //'<%= yeoman.dist %>/public/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
         '<%= yeoman.dist %>/public/assets/fonts/*'
         ]
         }
@@ -323,13 +323,13 @@ module.exports = function (grunt) {
         // This should be the name of your apps angular module
         module: 'd3ChartsApp',
         htmlmin: {
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-        removeEmptyAttributes: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true
+            collapseBooleanAttributes: true,
+            collapseWhitespace: false,
+            removeAttributeQuotes: true,
+            removeEmptyAttributes: true,
+            removeRedundantAttributes: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true
         },
         usemin: 'app/app.js'
         },
@@ -627,7 +627,7 @@ module.exports = function (grunt) {
       return grunt.task.run([
         'clean:server',
         'env:all',
-        'injector:sass', 
+        'injector:sass',
         'concurrent:server',
         'injector',
         'wiredep',
@@ -639,7 +639,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'env:all',
-      'injector:sass', 
+      'injector:sass',
       'concurrent:server',
       'injector',
       'wiredep',
@@ -673,7 +673,7 @@ grunt.registerTask('audit', function () {
       return grunt.task.run([
         'clean:server',
         'env:all',
-        'injector:sass', 
+        'injector:sass',
         'concurrent:test',
         'injector',
         'autoprefixer',
@@ -686,7 +686,7 @@ grunt.registerTask('audit', function () {
         'clean:server',
         'env:all',
         'env:test',
-        'injector:sass', 
+        'injector:sass',
         'concurrent:test',
         'injector',
         'wiredep',
@@ -704,7 +704,7 @@ grunt.registerTask('audit', function () {
 
     var build=[
         'clean:dist',
-        'injector:sass', 
+        'injector:sass',
         'concurrent:dist',
         'injector',
         'wiredep',
@@ -720,7 +720,7 @@ grunt.registerTask('audit', function () {
         'rev',
         'usemin'
     ];
-    
+
     grunt.registerTask('build',build);
 
     if(Config.env=='pro'){
